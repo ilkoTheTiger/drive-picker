@@ -6,12 +6,14 @@ import useDrivePicker from 'react-google-drive-picker'
 function App() {
 
   const [openPicker, data, authResponse] = useDrivePicker();
+  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+  const clientId = process.env.REACT_APP_CLIENT_ID;
 
   const handleOpenPicker = () => {
     console.log('picker handles')
     openPicker({
-      clientId: '284499767021-kdupshiumig3f1bb7nrsd9l03ruotd49.apps.googleusercontent.com',
-      developerKey: 'AIzaSyAOLOVw3NJ-HuJjTNYTET6rZsn5_oI4Auo',
+      clientId: clientId,
+      developerKey: apiKey,
       viewId: "DOCS",
       // appId: 'titan-cleaners',
       // setParentFolder: '1uBlUhAmiptleU0iNZqWca4QazJjQwOWX',
